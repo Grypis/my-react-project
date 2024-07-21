@@ -1,21 +1,24 @@
-// src/components/App.jsx
+// src/components/Product.jsx
 
-import { Product } from "./Product";
+import PropTypes from 'prop-types';
 
-export default function App() {
-  return (
-    <div>
-      <h1>Best selling</h1>
+const Product = ({
+  name,
+  imgUrl = "https://dummyimage.com/640x480/2a2a2a/ffffff&text=Product+image+placeholder",
+  price,
+}) => (
+  <div>
+		<img src={imgUrl} alt={name} width="480" />
+		<h2>{name}</h2>
+    <p>Price: {price} credits</p>
+  </div>
+);
 
-      <Product
-        name="Tacos With Lime"
-        price={10.99}
-      />
-      <Product
-        name="Fries and Burger"
-        imgUrl="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?dpr=2&h=480&w=640"
-        price={14.29}
-      />
-    </div>
-  );
-}
+// Опис типів пропсів компонента 
+Product.propTypes = {
+  name: PropTypes.string.isRequired,
+  imgUrl: PropTypes.string,
+  price: PropTypes.number.isRequired,
+};
+
+export default Product;
