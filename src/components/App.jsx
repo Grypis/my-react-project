@@ -1,24 +1,24 @@
-// src/components/Product.jsx
+// src/components/App.jsx
 
-import PropTypes from 'prop-types';
+import {Alert} from "./Alert";
 
-const Product = ({
-  name,
-  imgUrl = "https://dummyimage.com/640x480/2a2a2a/ffffff&text=Product+image+placeholder",
-  price,
-}) => (
-  <div>
-		<img src={imgUrl} alt={name} width="480" />
-		<h2>{name}</h2>
-    <p>Price: {price} credits</p>
-  </div>
-);
-
-// Опис типів пропсів компонента 
-Product.propTypes = {
-  name: PropTypes.string.isRequired,
-  imgUrl: PropTypes.string,
-  price: PropTypes.number.isRequired,
+const App = () => {
+  return (
+    <>
+      <Alert variant="info">
+        Would you like to browse our recommended products?
+      </Alert>
+      <Alert variant="error">
+        There was an error during your last transaction
+      </Alert>
+      <Alert variant="success">
+        Payment received, thank you for your purchase
+      </Alert>
+      <Alert variant="warning">
+        Please update your profile contact information
+      </Alert>
+    </>
+  );
 };
 
-export default Product;
+export default App;

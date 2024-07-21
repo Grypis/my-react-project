@@ -1,4 +1,4 @@
-// src/components/Product.jsx
+//src/components/Product.jsx
 
 import PropTypes from 'prop-types';
 
